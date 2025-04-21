@@ -1,0 +1,12 @@
+{
+    "name": "BCC",
+    "code": "BCC",
+    "title": "Dusty Scholar's Abyss",
+    "type": "Batch",
+    "has_grader": false,
+    "java_enabled": false,
+    "python_enabled": false,
+    "time_limit": 10.0,
+    "memory_limit": 1024,
+    "description": "Task description"
+}

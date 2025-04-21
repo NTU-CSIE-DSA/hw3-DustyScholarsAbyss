@@ -1,0 +1,5 @@
+{
+    "correct.cpp": { "verdict": "model_solution" },
+    "gpt.cpp": { "verdict": "correct" },
+    "tle.cpp": { "verdict": "time_limit" }
+}

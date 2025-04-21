@@ -1,0 +1,143 @@
+@subtask example
+manual example1.in
+manual example2.in
+
+@subtask smallType1
+manual example1.in
+gen 10 10 10 10 1
+gen 10 10 10 50 1
+gen 100 100 100 1000 1
+gen 100 100 1000 5000 1
+gen 500 500 5000 10000 1
+gen 1000 1000 10000 50000 1
+gen 1000 1000 50000 100000 1
+gen 10 10 0 0 2
+gen 100 100 0 0 2
+gen 1000 1000 0 0 2
+gen 10 20 0 0 3
+gen 100 200 0 0 3
+gen 200 1000 0 0 3
+gen 10 20 1000000 1000000 4
+gen 100 200 1000000 1000000 4
+gen 200 1000 1000000 1000000 4
+gen 1000 1000 1000000 1000000 4
+gen 10 20 0 0 5
+gen 100 200 0 0 5
+gen 200 1000 0 0 5
+gen 1000 1000 0 0 5
+gen 10 10 0 0 6
+gen 100 100 0 0 6
+gen 1000 1000 0 0 6
+gen 0 0 0 0 7
+gen 10 10 0 0 8
+gen 100 100 0 0 8
+gen 1000 1000 0 0 8
+gen 10 10 0 0 9
+gen 100 100 0 0 9
+gen 1000 1000 0 0 9
+gen 10 10 0 0 10
+gen 100 100 0 0 10
+gen 1000 1000 0 0 10
+gen 10 10 0 0 11
+gen 100 100 0 0 11
+gen 1000 1000 0 0 11
+
+@subtask bigType1
+@include smallType1
+gen 1000 10000 10000 100000 1
+gen 10000 30000 1000000 1000000 1
+gen 100000 100000 100000 1000000 1
+gen 100000 100000 1000000 1000000 1
+gen 10000 10000 0 0 2
+gen 100000 100000 0 0 2
+gen 1000 10000 0 0 3
+gen 10000 100000 0 0 3
+gen 100000 100000 0 0 3
+gen 1000 10000 1000000 1000000 4
+gen 10000 100000 1000000 1000000 4
+gen 100000 100000 1000000 1000000 4
+gen 1000 10000 0 0 6
+gen 10000 100000 0 0 6
+gen 100000 100000 0 0 6
+gen 1000 10000 0 0 8
+gen 10000 100000 0 0 8
+gen 100000 100000 0 0 8
+gen 1000 10000 0 0 9
+gen 10000 100000 0 0 9
+gen 100000 100000 0 0 9
+gen 1000 10000 0 0 10
+gen 10000 100000 0 0 10
+gen 100000 100000 0 0 10
+gen 1000 10000 0 0 11
+gen 10000 100000 0 0 11
+gen 100000 100000 0 0 11
+
+@subtask smallType2
+genCopy 1-01
+genCopy 1-02
+genCopy 1-03
+genCopy 1-04
+genCopy 1-05
+genCopy 1-06
+genCopy 1-07
+genCopy 1-08
+genCopy 1-09
+genCopy 1-10
+genCopy 1-11
+genCopy 1-12
+genCopy 1-13
+genCopy 1-14
+genCopy 1-15
+genCopy 1-16
+genCopy 1-17
+genCopy 1-18
+genCopy 1-19
+genCopy 1-20
+genCopy 1-21
+genCopy 1-22
+genCopy 1-23
+genCopy 1-24
+genCopy 1-25
+genCopy 1-26
+genCopy 1-27
+genCopy 1-28
+genCopy 1-29
+genCopy 1-30
+genCopy 1-31
+genCopy 1-32
+genCopy 1-33
+genCopy 1-34
+genCopy 1-35
+genCopy 1-36
+genCopy 1-37
+genCopy 1-38
+
+@subtask bigType2
+@include smallType2
+genCopy 2-01
+genCopy 2-02
+genCopy 2-03
+genCopy 2-04
+genCopy 2-05
+genCopy 2-06
+genCopy 2-07
+genCopy 2-08
+genCopy 2-09
+genCopy 2-10
+genCopy 2-11
+genCopy 2-12
+genCopy 2-13
+genCopy 2-14
+genCopy 2-15
+genCopy 2-16
+genCopy 2-17
+genCopy 2-18
+genCopy 2-19
+genCopy 2-20
+genCopy 2-21
+genCopy 2-22
+genCopy 2-23
+genCopy 2-24
+genCopy 2-25
+genCopy 2-26
+genCopy 2-27
