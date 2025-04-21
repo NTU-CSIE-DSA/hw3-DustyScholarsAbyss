@@ -26,12 +26,6 @@ typedef struct component {
     int size;
 } Component;
 
-typedef struct dfsFrame {
-    int u;
-    Node *neighbor;
-    bool ret;
-} DFSFrame;
-
 int n, m;
 bool visited[MAXN];         // True if the vertex is visited
 int timeIn[MAXN];           // Record the time when the vertex is visited 
@@ -43,8 +37,6 @@ int edgeStackTop = -1;
 bool isArti[MAXN];          // True if the vertex is an articulation point
 Component components[MAXN]; // Store the components of the BCCs
 int componentCt = 0;
-DFSFrame dfsStack[MAXN]; // Stack to store the DFS frames
-int dfsStackTop = 0;
 
 int min(int a, int b){ return (a < b) ? a : b; }
 
