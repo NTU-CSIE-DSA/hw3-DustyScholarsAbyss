@@ -10,15 +10,15 @@ The network consists of $N$ cities and $M$ tunnels. Each city is represented by 
 
 DerTian wants to identify:
 
-* **Critical Tunnels**: Tunnels whose collapse would disconnect parts of the network.
 * **Critical Cities**: Cities whose loss would fragment the network into separate regions.
+* **Critical Tunnels**: Tunnels whose collapse would disconnect parts of the network.
 * **Independent Exploration Zones**: Zones of ruins that remains connected even if any single city is removed.
 
 These discoveries will help DerTian decide which tunnels to reinforce and where to focus excavation efforts.
 
 ### Formal Version
 
-You are given an undirected graph with $N$ vertices and $M$ edges. Determine the number of bridges, the number of articulation points, and the biconnected components. 
+You are given an undirected graph with $N$ vertices and $M$ edges. Determine the articulation points, the number of bridges, and the biconnected components. 
 
 
 ## Reference Reading
@@ -42,9 +42,9 @@ In other words, if there exists a child $v$ of $u$ such that $low(v) \geq t_{in}
 -->
 An edge of $(u, v)$ is a bridge if and only if it does not lie on any simple cycle of $G$. Articulation points divide the graph into biconnected components, which are the maximal subgraphs that remain connected after the removal of any single vertex.
 
-![Articulation Points](https://hackmd.io/_uploads/S1xxz6oRJe.png)
-![Bridges](https://hackmd.io/_uploads/SyxxfTiCJx.png)
-![Biconnected Components](https://hackmd.io/_uploads/SJelMpoRyl.png)
+![Articulation Points](https://hackmd.io/_uploads/SybqkUXkeg.png)
+![Bridges](https://hackmd.io/_uploads/BkC5JImkge.png)
+![Biconnected Components](https://hackmd.io/_uploads/BJMo18QJxg.png)
 
 
 ## Input
