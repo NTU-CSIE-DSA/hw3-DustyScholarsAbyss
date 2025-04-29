@@ -194,16 +194,8 @@ int main() {
         }
     }
     if (mode == 2) {
-        qsort(bcc, bcc_cnt, sizeof(Component), compare_bccs);
         printf("%d\n", bridges);
-        printf("%d\n", bcc_cnt);
-        for (int i = 0; i < bcc_cnt; i++) {
-            for (int j = 0; j < bcc[i].sz; j++) {
-                printf("%d ", bcc[i].list[j]);
-            }
-            printf("\n");
-        }
-    } else {
+    } else if (mode == 1) {
         int ans = 0;
         for (int i = 0; i < n; i++) {
             if (cutpts[i]) {
@@ -217,6 +209,15 @@ int main() {
             }
         }
         printf("\n");
+    } else {
+        qsort(bcc, bcc_cnt, sizeof(Component), compare_bccs);
+        printf("%d\n", bcc_cnt);
+        for (int i = 0; i < bcc_cnt; i++) {
+            for (int j = 0; j < bcc[i].sz; j++) {
+                printf("%d ", bcc[i].list[j]);
+            }
+            printf("\n");
+        }
     }
     for (int i = 0; i < n; i++) {
         Node* curr = G[i];

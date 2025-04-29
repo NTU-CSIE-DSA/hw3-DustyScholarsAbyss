@@ -249,58 +249,62 @@ int main(void) {
     printf("\n");
   } else {
     find_bcc();
+    if (mode == 2){
+        printf("%lld\n", bridge_count);
+        return 0;
+    } else {
+        printf("%lld\n", bcc_idx);
 
-    printf("%lld\n%lld\n", bridge_count, bcc_idx);
-
-    ll valid_bcc_count = 0;
-    for (ll i = 0; i < bcc_idx; ++i) {
-      CdsArray *comp = &bcc_list[i];
-      if (comp->data != NULL && comp->size > 0) {
-        if (comp->size > 1) {
-          qsort(comp->data, comp->size, sizeof(ll), ll_cmp);
-        }
-
-        ll unique_idx = 0;
-        if (comp->size > 0) {
-          unique_idx = 1;
-          for (ll j = 1; j < comp->size; ++j) {
-            if (*(ll *)ca_get(comp, j) != *(ll *)ca_get(comp, j - 1)) {
-              if (j != unique_idx) {
-                memcpy(ca_get(comp, unique_idx), ca_get(comp, j), sizeof(ll));
-              }
-              unique_idx++;
+        ll valid_bcc_count = 0;
+        for (ll i = 0; i < bcc_idx; ++i) {
+        CdsArray *comp = &bcc_list[i];
+        if (comp->data != NULL && comp->size > 0) {
+            if (comp->size > 1) {
+            qsort(comp->data, comp->size, sizeof(ll), ll_cmp);
             }
-          }
-          comp->size = unique_idx;
-        }
 
-        if (comp->size >= 2) {
-          if (i != valid_bcc_count) {
-            bcc_list[valid_bcc_count] = bcc_list[i];
-            comp->data = NULL;
-          }
-          valid_bcc_count++;
+            ll unique_idx = 0;
+            if (comp->size > 0) {
+            unique_idx = 1;
+            for (ll j = 1; j < comp->size; ++j) {
+                if (*(ll *)ca_get(comp, j) != *(ll *)ca_get(comp, j - 1)) {
+                if (j != unique_idx) {
+                    memcpy(ca_get(comp, unique_idx), ca_get(comp, j), sizeof(ll));
+                }
+                unique_idx++;
+                }
+            }
+            comp->size = unique_idx;
+            }
+
+            if (comp->size >= 2) {
+            if (i != valid_bcc_count) {
+                bcc_list[valid_bcc_count] = bcc_list[i];
+                comp->data = NULL;
+            }
+            valid_bcc_count++;
+            } else {
+            ca_delete(comp);
+            }
         } else {
-          ca_delete(comp);
+            if (comp->data != NULL)
+            ca_delete(comp);
         }
-      } else {
-        if (comp->data != NULL)
-          ca_delete(comp);
-      }
-    }
-    bcc_idx = valid_bcc_count;
+        }
+        bcc_idx = valid_bcc_count;
 
-    if (bcc_idx > 1) {
-      qsort(bcc_list, bcc_idx, sizeof(CdsArray), ca_cmp);
-    }
+        if (bcc_idx > 1) {
+        qsort(bcc_list, bcc_idx, sizeof(CdsArray), ca_cmp);
+        }
 
-    for (ll i = 0; i < bcc_idx; ++i) {
-      CdsArray *comp = &bcc_list[i];
-      for (ll j = 0; j < ca_size(comp); ++j) {
-        printf("%lld%c", *(ll *)ca_get(comp, j),
-               (j == ca_size(comp) - 1) ? '\n' : ' ');
-      }
-      ca_delete(comp);
+        for (ll i = 0; i < bcc_idx; ++i) {
+        CdsArray *comp = &bcc_list[i];
+        for (ll j = 0; j < ca_size(comp); ++j) {
+            printf("%lld%c", *(ll *)ca_get(comp, j),
+                (j == ca_size(comp) - 1) ? '\n' : ' ');
+        }
+        ca_delete(comp);
+        }
     }
   }
 }
