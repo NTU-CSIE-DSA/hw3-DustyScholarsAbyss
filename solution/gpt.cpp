@@ -140,7 +140,7 @@ int main() {
         printf("%d\n", cnt);
         for (int i = 0; i < cnt; ++i)
             printf("%d%c", result[i], i + 1 == cnt ? '\n' : ' ');
-    } else {
+    } else if (mode == 2){
         memset(tin, 0, sizeof(tin));
         timer = 0;
         count_bridges(0, -1);
@@ -149,6 +149,14 @@ int main() {
         dfs(0, -1);
 
         printf("%d\n", bridge_cnt);
+    } else {
+        memset(tin, 0, sizeof(tin));
+        timer = 0;
+        count_bridges(0, -1);
+        memset(tin, 0, sizeof(tin));
+        timer = 0;
+        dfs(0, -1);
+        
         for (int i = 0; i < component_cnt; ++i) {
             Component *c = &components[i];
             qsort(c->nodes, c->size, sizeof(int), compare_int);

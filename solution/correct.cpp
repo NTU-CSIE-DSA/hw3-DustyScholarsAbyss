@@ -271,6 +271,8 @@ int main(){
     }
     else if (type == 2){
         Bridge(G);
+    }
+    else if (type == 3){
         Bcc();
     }
     else {

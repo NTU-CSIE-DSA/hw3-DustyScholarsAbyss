@@ -11,8 +11,9 @@ using namespace std;
 // Usage: genCopy <filename>
 int main(int argc, char* argv[]) {
     registerGen(argc, argv);
-    assert(argc == 2);
+    assert(argc == 3);
     string filename = argv[1];
+    char *type = argv[2];
     filename = "../tests/" + filename + ".in";
     ifstream inputFile(filename);
     vector<string> lines;
@@ -25,7 +26,7 @@ int main(int argc, char* argv[]) {
 
     inputFile.close();
 
-    lines[0].replace(lines[0].end() - 1, lines[0].end(), "2");
+    lines[0].replace(lines[0].end() - 1, lines[0].end(), type);
 
     for (const auto& updatedLine : lines) {
         cout << updatedLine << "\n";

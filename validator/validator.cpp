@@ -19,7 +19,7 @@ int main() {
 	inf.readSpace();
 	int m = inf.readInt(n - 1, MAXM, "m");
 	inf.readSpace();
-	inf.readInt(1, 2, "type");
+	inf.readInt(1, 3, "type");
 	inf.readEoln();
 	set<pair<int, int>> edges;
 	for (int i=0; i<m; i++){
